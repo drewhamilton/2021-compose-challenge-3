@@ -20,16 +20,11 @@ import androidx.activity.compose.setContent
 import androidx.appcompat.app.AppCompatActivity
 import androidx.compose.material.MaterialTheme
 import androidx.compose.material.Surface
-import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.core.view.WindowCompat
-import androidx.core.view.WindowInsetsCompat
 import androidx.navigation.compose.rememberNavController
-import com.example.androiddevchallenge.home.HomeScreen
-import com.example.androiddevchallenge.login.LoginScreen
 import com.example.androiddevchallenge.ui.theme.MyTheme
-import com.example.androiddevchallenge.welcome.WelcomeScreen
 import dev.chrisbanes.accompanist.insets.ProvideWindowInsets
 
 class MainActivity : AppCompatActivity() {

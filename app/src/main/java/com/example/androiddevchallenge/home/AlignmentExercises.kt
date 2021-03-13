@@ -38,8 +38,7 @@ data class AlignmentExercise(
     @DrawableRes val imageRes: Int,
 )
 
-@Composable fun AlignmentExerciseRow(alignmentExercises: List<AlignmentExercise>) = LazyRow(
-) {
+@Composable fun AlignmentExerciseRow(alignmentExercises: List<AlignmentExercise>) = LazyRow {
     items(alignmentExercises.size) { index ->
         fun Modifier.itemPadding() = when (index) {
             0 -> padding(start = grid(2))
