@@ -19,6 +19,12 @@
         <item name="colorSecondaryVariant">?colorSecondary</item>
         <item name="colorOnSecondary">@color/onSecondary</item>
 
+        <item name="android:colorBackground">@color/background</item>
+        <item name="colorOnBackground">@color/onBackground</item>
+
+        <item name="colorSurface">@color/surface</item>
+        <item name="colorOnSurface">@color/onSurface</item>
+
         <item name="android:statusBarColor">@color/statusBar</item>
         <item name="android:windowLightStatusBar">@bool/lightStatusBar</item>
 
