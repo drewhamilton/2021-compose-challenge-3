@@ -46,9 +46,9 @@ import com.example.androiddevchallenge.ui.theme.grid
 import com.example.androiddevchallenge.ui.theme.gridHalf
 import dev.chrisbanes.accompanist.insets.systemBarsPadding
 
-@Preview(widthDp = 360, heightDp = 640)
 @Composable
 fun LoginScreen(
+    onLoggedIn: () -> Unit,
     modifier: Modifier = Modifier
 ) = Box(modifier) {
     Image(
@@ -77,7 +77,7 @@ fun LoginScreen(
         Spacer(modifier = Modifier.height(grid(1)))
         MySootheButton(
             text = "LOG IN",
-            onClick = { /*TODO*/ },
+            onClick = { onLoggedIn() },
         )
 
         val signUpText = "Sign up"
