@@ -11,4 +11,6 @@
 
   <color name="surface">#d9FFFFFF</color>
   <color name="onSurface">#cc333333</color>
+
+  <bool name="lightStatusBar">true</bool>
 </resources>

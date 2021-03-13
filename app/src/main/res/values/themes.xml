@@ -20,5 +20,6 @@
         <item name="colorOnSecondary">@color/onSecondary</item>
 
         <item name="android:statusBarColor">#00000000</item>
+        <item name="android:windowLightStatusBar">@bool/lightStatusBar</item>
     </style>
 </resources>
