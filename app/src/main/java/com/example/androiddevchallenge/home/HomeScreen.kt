@@ -13,11 +13,14 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.example.androiddevchallenge.login
+package com.example.androiddevchallenge.home
 
 import androidx.compose.foundation.Image
+import androidx.compose.foundation.gestures.ScrollableState
+import androidx.compose.foundation.gestures.scrollable
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
+import androidx.compose.foundation.layout.BoxScope
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxSize
@@ -25,6 +28,11 @@ import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.paddingFromBaseline
+import androidx.compose.foundation.layout.size
+import androidx.compose.foundation.lazy.LazyColumn
+import androidx.compose.material.BottomNavigation
+import androidx.compose.material.FloatingActionButton
+import androidx.compose.material.FloatingActionButtonDefaults
 import androidx.compose.material.MaterialTheme
 import androidx.compose.material.Text
 import androidx.compose.material.TextField
@@ -44,20 +52,16 @@ import com.example.androiddevchallenge.ui.MySootheButton
 import com.example.androiddevchallenge.ui.MySootheTextField
 import com.example.androiddevchallenge.ui.theme.grid
 import com.example.androiddevchallenge.ui.theme.gridHalf
+import dev.chrisbanes.accompanist.insets.navigationBarsPadding
+import dev.chrisbanes.accompanist.insets.statusBarsPadding
 import dev.chrisbanes.accompanist.insets.systemBarsPadding
 
 @Preview(widthDp = 360, heightDp = 640)
 @Composable
-fun LoginScreen(
+fun HomeScreen(
     modifier: Modifier = Modifier
 ) = Box(modifier) {
-    Image(
-        painterResource(R.drawable.login),
-        contentDescription = null,
-        modifier = Modifier.fillMaxSize(),
-        contentScale = ContentScale.Crop
-    )
-    Column(
+    LazyColumn(
         modifier = Modifier
             .fillMaxSize()
             .systemBarsPadding()
@@ -65,37 +69,35 @@ fun LoginScreen(
         horizontalAlignment = Alignment.CenterHorizontally,
         verticalArrangement = Arrangement.Center
     ) {
-        Text(
-            text = "LOG IN",
-            modifier = Modifier.paddingFromBaseline(bottom = grid(4)),
-            style = MaterialTheme.typography.h1
-        )
+        item {
+            MySootheTextField(label = "Search")
+        }
+    }
 
-        MySootheTextField(label = "Email address")
-        Spacer(modifier = Modifier.height(grid(1)))
-        MySootheTextField(label = "Password")
-        Spacer(modifier = Modifier.height(grid(1)))
-        MySootheButton(
-            text = "LOG IN",
-            onClick = { /*TODO*/ },
-        )
+    val bottomNavigationHeight = grid(7)
+    BottomNavigation(
+        modifier = Modifier
+            .align(Alignment.BottomCenter)
+            .navigationBarsPadding()
+            .height(bottomNavigationHeight),
+        backgroundColor = MaterialTheme.colors.background,
+        elevation = 8.dp,
+    ) {
 
-        val signUpText = "Sign up"
-        val signUpMessage = "Don't have an account? $signUpText"
-        val underlineStart = signUpMessage.indexOf(signUpText)
-        val underlineEnd = underlineStart + signUpText.length
-        Text(
-            text = AnnotatedString(
-                text = signUpMessage,
-                spanStyles = listOf(
-                    AnnotatedString.Range(
-                        item = SpanStyle(textDecoration = TextDecoration.Underline),
-                        start = underlineStart, end = underlineEnd
-                    )
-                )
-            ),
-            modifier = Modifier.paddingFromBaseline(top = 32.dp),
-            style = MaterialTheme.typography.body1
-        )
+    }
+
+    FloatingActionButton(
+        onClick = {},
+        modifier = Modifier
+            .align(Alignment.BottomCenter)
+            .navigationBarsPadding()
+            .padding(bottom = bottomNavigationHeight / 2),
+        backgroundColor = MaterialTheme.colors.primary,
+        elevation = FloatingActionButtonDefaults.elevation(
+            defaultElevation = 0.dp,
+            pressedElevation = 0.dp,
+        ),
+    ) {
+        //TODO
     }
 }
