@@ -19,4 +19,5 @@ import androidx.compose.ui.unit.dp
 
 private val grid1 = 8.dp
 
+val gridHalf = grid1 / 2
 fun grid(multiplier: Int) = grid1 * multiplier

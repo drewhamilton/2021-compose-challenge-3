@@ -45,6 +45,7 @@ import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import com.example.androiddevchallenge.R
+import com.example.androiddevchallenge.ui.MySootheButton
 import com.example.androiddevchallenge.ui.theme.grid
 import dev.chrisbanes.accompanist.insets.systemBarsPadding
 
@@ -73,37 +74,16 @@ fun WelcomeScreen(
             modifier = Modifier.width(grid(18)).wrapContentHeight()
         )
         Spacer(modifier = Modifier.height(grid(4)))
-        WelcomeButton(
+        MySootheButton(
             text = "SIGN UP",
             onClick = { /*TODO*/ },
             backgroundColor = MaterialTheme.colors.primary,
         )
         Spacer(modifier = Modifier.height(grid(1)))
-        WelcomeButton(
+        MySootheButton(
             text = "LOG IN",
             onClick = { /*TODO*/ },
             backgroundColor = MaterialTheme.colors.secondary,
         )
     }
-}
-
-@Composable
-private fun WelcomeButton(
-    text: String,
-    onClick: () -> Unit,
-    backgroundColor: Color,
-) = Button(
-    onClick = onClick,
-    modifier = Modifier
-        .fillMaxWidth()
-        .height(grid(9))
-        .padding(horizontal = grid(2)),
-    elevation = ButtonDefaults.elevation(0.dp, 0.dp, 0.dp),
-    shape = MaterialTheme.shapes.medium,
-    colors = ButtonDefaults.buttonColors(backgroundColor = backgroundColor),
-) {
-    Text(
-        text = text,
-        style = MaterialTheme.typography.button,
-    )
 }
