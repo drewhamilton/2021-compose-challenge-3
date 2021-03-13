@@ -44,6 +44,7 @@ import com.example.androiddevchallenge.ui.MySootheButton
 import com.example.androiddevchallenge.ui.MySootheTextField
 import com.example.androiddevchallenge.ui.theme.grid
 import com.example.androiddevchallenge.ui.theme.gridHalf
+import dev.chrisbanes.accompanist.insets.navigationBarsPadding
 import dev.chrisbanes.accompanist.insets.systemBarsPadding
 
 @Composable
@@ -60,14 +61,13 @@ fun LoginScreen(
     Column(
         modifier = Modifier
             .fillMaxSize()
-            .systemBarsPadding()
-            .padding(),
+            .navigationBarsPadding(),
         horizontalAlignment = Alignment.CenterHorizontally,
         verticalArrangement = Arrangement.Center
     ) {
         Text(
             text = "LOG IN",
-            modifier = Modifier.paddingFromBaseline(bottom = grid(4)),
+            modifier = Modifier.paddingFromBaseline(top = 200.dp, bottom = grid(4)),
             style = MaterialTheme.typography.h1
         )
 
