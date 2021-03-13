@@ -19,7 +19,11 @@
         <item name="colorSecondaryVariant">?colorSecondary</item>
         <item name="colorOnSecondary">@color/onSecondary</item>
 
-        <item name="android:statusBarColor">#00000000</item>
+        <item name="android:statusBarColor">@color/statusBar</item>
         <item name="android:windowLightStatusBar">@bool/lightStatusBar</item>
+
+        <item name="android:navigationBarColor">@color/navigationBar</item>
+        <item name="android:windowLightNavigationBar" tools:targetApi="27">@bool/lightNavigationBar</item>
+        <item name="android:enforceNavigationBarContrast" tools:targetApi="29">false</item>
     </style>
 </resources>

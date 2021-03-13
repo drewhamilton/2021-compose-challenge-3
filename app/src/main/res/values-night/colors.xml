@@ -13,4 +13,5 @@
   <color name="onSurface">#ccffffff</color>
 
   <bool name="lightStatusBar">false</bool>
+  <bool name="lightNavigationBar">false</bool>
 </resources>

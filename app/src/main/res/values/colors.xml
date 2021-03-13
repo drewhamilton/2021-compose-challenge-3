@@ -12,5 +12,9 @@
   <color name="surface">#d9FFFFFF</color>
   <color name="onSurface">#cc333333</color>
 
+  <color name="statusBar">#00000000</color>
   <bool name="lightStatusBar">true</bool>
+
+  <color name="navigationBar">#000000</color>
+  <bool name="lightNavigationBar">false</bool>
 </resources>

@@ -31,6 +31,7 @@ import androidx.compose.material.FloatingActionButton
 import androidx.compose.material.FloatingActionButtonDefaults
 import androidx.compose.material.Icon
 import androidx.compose.material.MaterialTheme
+import androidx.compose.material.Surface
 import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
@@ -41,6 +42,7 @@ import androidx.compose.ui.unit.dp
 import com.example.androiddevchallenge.R
 import com.example.androiddevchallenge.ui.MySootheTextField
 import com.example.androiddevchallenge.ui.theme.grid
+import dev.chrisbanes.accompanist.insets.navigationBarsHeight
 import dev.chrisbanes.accompanist.insets.navigationBarsPadding
 
 @Preview(widthDp = 360, heightDp = 640)
@@ -76,24 +78,29 @@ fun HomeScreen(
     }
 
     val bottomNavigationHeight = grid(7)
-    BottomNavigation(
+    Surface(
         modifier = Modifier
             .align(Alignment.BottomCenter)
-            .navigationBarsPadding()
-            .height(bottomNavigationHeight),
-        backgroundColor = MaterialTheme.colors.background,
+            .navigationBarsHeight(bottomNavigationHeight),
+        color = MaterialTheme.colors.background,
         elevation = 8.dp,
     ) {
-        BottomNavigationItem(
-            iconRes = R.drawable.ic_spa,
-            label = "HOME",
-            selected = true
-        )
-        BottomNavigationItem(
-            iconRes = R.drawable.ic_account_circle,
-            label = "PROFILE",
-            selected = false
-        )
+        BottomNavigation(
+            modifier = Modifier.height(bottomNavigationHeight).navigationBarsPadding(),
+            backgroundColor = MaterialTheme.colors.background,
+            elevation = 0.dp,
+        ) {
+            BottomNavigationItem(
+                iconRes = R.drawable.ic_spa,
+                label = "HOME",
+                selected = true
+            )
+            BottomNavigationItem(
+                iconRes = R.drawable.ic_account_circle,
+                label = "PROFILE",
+                selected = false
+            )
+        }
     }
 
     FloatingActionButton(
@@ -118,7 +125,9 @@ fun HomeScreen(
 @Composable
 private fun SectionHeader(text: String) = Text(
     text = text,
-    modifier = Modifier.paddingFromBaseline(top = grid(5)).padding(horizontal = grid(2)),
+    modifier = Modifier
+        .paddingFromBaseline(top = grid(5))
+        .padding(horizontal = grid(2)),
     style = MaterialTheme.typography.h2,
 )
 
