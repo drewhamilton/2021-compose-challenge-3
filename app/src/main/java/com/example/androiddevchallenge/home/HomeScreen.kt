@@ -50,11 +50,13 @@ import dev.chrisbanes.accompanist.insets.navigationBarsPadding
 fun HomeScreen(
     modifier: Modifier = Modifier
 ) = Box(modifier) {
+    val bottomNavigationHeight = grid(7)
+
     LazyColumn(
         modifier = Modifier
             .fillMaxSize()
             .navigationBarsPadding()
-            .padding(),
+            .padding(bottom = bottomNavigationHeight),
     ) {
         item {
             MySootheTextField(
@@ -62,22 +64,31 @@ fun HomeScreen(
                 iconRes = R.drawable.ic_search,
                 modifier = Modifier.padding(top = grid(7))
             )
+        }
 
+        item {
             SectionHeader("FAVORITE COLLECTIONS")
             Spacer(modifier = Modifier.height(grid(1)))
             ExerciseCollectionGroup(favoriteExerciseCollections)
+        }
 
+        item {
             SectionHeader("ALIGN YOUR BODY")
             Spacer(modifier = Modifier.height(grid(1)))
             AlignmentExerciseRow(bodyAlignmentExercises)
+        }
 
+        item {
             SectionHeader("ALIGN YOUR MIND")
             Spacer(modifier = Modifier.height(grid(1)))
             AlignmentExerciseRow(mindAlignmentExercises)
         }
+
+        item {
+            Spacer(Modifier.height(bottomNavigationHeight))
+        }
     }
 
-    val bottomNavigationHeight = grid(7)
     Surface(
         modifier = Modifier
             .align(Alignment.BottomCenter)
