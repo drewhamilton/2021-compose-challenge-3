@@ -17,7 +17,16 @@ package com.example.androiddevchallenge.ui.theme
 
 import androidx.compose.ui.graphics.Color
 
-val purple200 = Color(0xFFBB86FC)
-val purple500 = Color(0xFF6200EE)
-val purple700 = Color(0xFF3700B3)
-val teal200 = Color(0xFF03DAC5)
+val gray900 = Color(0xff333333)
+val gray900_80percent = gray900.copy(alpha = 0.80f)
+
+val rust300 = Color(0xffe1afaf)
+val rust600 = Color(0xff886363)
+
+val taupe100 = Color(0xfff0eae2)
+val taupe800 = Color(0xff655454)
+
+val white = Color.White
+val white_15percent = white.copy(alpha = 0.15f)
+val white_80percent = white.copy(alpha = 0.80f)
+val white_85percent = white.copy(alpha = 0.85f)
