@@ -29,7 +29,6 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
-import androidx.compose.ui.draw.clipToBounds
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.res.painterResource
 import com.example.androiddevchallenge.ui.theme.grid
@@ -48,19 +47,19 @@ data class AlignmentExercise(
             else -> padding(start = grid(1))
         }
 
-        val alignment = alignmentExercises[index]
+        val alignmentExercise = alignmentExercises[index]
         Column(
             modifier = Modifier.itemPadding(),
             horizontalAlignment = Alignment.CenterHorizontally,
         ) {
             Image(
-                painter = painterResource(id = alignment.imageRes),
+                painter = painterResource(id = alignmentExercise.imageRes),
                 contentDescription = null,
                 modifier = Modifier.size(grid(11)).clip(CircleShape),
                 contentScale = ContentScale.Crop,
             )
             Text(
-                text = alignment.title,
+                text = alignmentExercise.title,
                 modifier = Modifier.paddingFromBaseline(top = grid(3)),
                 style = MaterialTheme.typography.h3,
             )

@@ -42,7 +42,6 @@ import com.example.androiddevchallenge.R
 import com.example.androiddevchallenge.ui.MySootheTextField
 import com.example.androiddevchallenge.ui.theme.grid
 import dev.chrisbanes.accompanist.insets.navigationBarsPadding
-import dev.chrisbanes.accompanist.insets.systemBarsPadding
 
 @Preview(widthDp = 360, heightDp = 640)
 @Composable
@@ -64,9 +63,7 @@ fun HomeScreen(
 
             SectionHeader("FAVORITE COLLECTIONS")
             Spacer(modifier = Modifier.height(grid(1)))
-            CollectionRow()
-            Spacer(modifier = Modifier.height(grid(1)))
-            CollectionRow()
+            ExerciseCollectionGroup(favoriteExerciseCollections)
 
             SectionHeader("ALIGN YOUR BODY")
             Spacer(modifier = Modifier.height(grid(1)))
@@ -146,6 +143,15 @@ private fun RowScope.BottomNavigationItem(
             style = MaterialTheme.typography.caption,
         )
     },
+)
+
+private val favoriteExerciseCollections = listOf(
+    ExerciseCollection("Short mantras", R.drawable.short_mantras),
+    ExerciseCollection("Nature meditations", R.drawable.nature_meditations),
+    ExerciseCollection("Stress and anxiety", R.drawable.stress_and_anxiety),
+    ExerciseCollection("Self-massage", R.drawable.self_massage),
+    ExerciseCollection("Overwhelmed", R.drawable.overwhelmed),
+    ExerciseCollection("Nightly wind down", R.drawable.nightly_wind_down),
 )
 
 private val bodyAlignmentExercises = listOf(
